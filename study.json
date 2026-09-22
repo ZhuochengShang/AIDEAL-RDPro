@@ -1,10 +1,9 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "study_id": "2026-09-21-rdpro-gpt-5.3-codex-five-conditions",
   "repository": "https://github.com/ZhuochengShang/AIDEAL-RDPro",
-  "repository_layout": "Navigation-only orphan main; five dated measured-source branches retain their exact original commits.",
-  "provenance": "An independent GitHub experiment copy preserving measured RDPro/Beast source history. GitHub fork-network status is not asserted; these are five conditions in one repository, not five forks.",
-  "baseline_commit": "547f7f912131a8032f6b5d26991415a5faf05cef",
+  "repository_layout": "Navigation-only orphan main; one clean source-snapshot baseline and four direct treatment descendants. All five source trees exactly match their corresponding measured trees.",
+  "provenance": "Independent GitHub experiment snapshots. Published commit IDs differ from measured local commit IDs; measured source trees, treatment bytes and license files are unchanged. Original study histories remain local and unchanged. This is one repository with five conditions, not five forks.",
   "frozen_study_sha256": "ed877ae454bc10bc69e27ed7cdc42b59d398f7919ad10ad94084b3dd08706f95",
   "treatment_version": "1b9b32f4968314207470d5d9ed52ec1175f8fa1e26df06deb5ad5f86cc6a8468",
   "refactor_excluded": true,
@@ -14,19 +13,21 @@
       "condition": "original",
       "branch": "study/2026-09-21-gpt-5.3-codex/original",
       "branch_url": "https://github.com/ZhuochengShang/AIDEAL-RDPro/tree/study/2026-09-21-gpt-5.3-codex/original",
-      "commit": "547f7f912131a8032f6b5d26991415a5faf05cef",
-      "commit_url": "https://github.com/ZhuochengShang/AIDEAL-RDPro/commit/547f7f912131a8032f6b5d26991415a5faf05cef",
+      "commit_url": "https://github.com/ZhuochengShang/AIDEAL-RDPro/commit/5ee41a6dc37ebe5f63bf7a3a0b74c5483460b9c8",
       "tree": "757142fe21ba53b1388880d6abc7423aff844295",
       "code_tree_sha256": "f6c21f46db0f1872e5c9dd068e6719f8f3a649aeca05558a87179d79235cf3ff",
       "root_readme_blob": "2ea9f8d6abd2e0e35efb41a5f383a4e2df0680f5",
-      "treatment_artifacts": []
+      "treatment_artifacts": [],
+      "measured_commit": "547f7f912131a8032f6b5d26991415a5faf05cef",
+      "published_commit": "5ee41a6dc37ebe5f63bf7a3a0b74c5483460b9c8",
+      "publication_parent": null,
+      "tree_matches_measured": true
     },
     {
       "condition": "readme_only",
       "branch": "study/2026-09-21-gpt-5.3-codex/readme-only",
       "branch_url": "https://github.com/ZhuochengShang/AIDEAL-RDPro/tree/study/2026-09-21-gpt-5.3-codex/readme-only",
-      "commit": "7ab580c744dbf4d02a0ced29bd81b6cc4d0fbb72",
-      "commit_url": "https://github.com/ZhuochengShang/AIDEAL-RDPro/commit/7ab580c744dbf4d02a0ced29bd81b6cc4d0fbb72",
+      "commit_url": "https://github.com/ZhuochengShang/AIDEAL-RDPro/commit/41a302b39dd7d9260842827d22bf7fa48dadcad7",
       "tree": "957cbf1e741f3df545b3f82d69e6d62fbee3d905",
       "code_tree_sha256": "f6c21f46db0f1872e5c9dd068e6719f8f3a649aeca05558a87179d79235cf3ff",
       "root_readme_blob": "2ea9f8d6abd2e0e35efb41a5f383a4e2df0680f5",
@@ -36,16 +37,19 @@
           "role": "readme",
           "sha256": "ad05224cd45d670bef0ac14e407741fcc641af6d45482d5091f8453c7ec86a80",
           "bytes": 638199,
-          "url": "https://github.com/ZhuochengShang/AIDEAL-RDPro/blob/7ab580c744dbf4d02a0ced29bd81b6cc4d0fbb72/.aideal/treatments/README.md"
+          "url": "https://github.com/ZhuochengShang/AIDEAL-RDPro/blob/41a302b39dd7d9260842827d22bf7fa48dadcad7/.aideal/treatments/README.md"
         }
-      ]
+      ],
+      "measured_commit": "7ab580c744dbf4d02a0ced29bd81b6cc4d0fbb72",
+      "published_commit": "41a302b39dd7d9260842827d22bf7fa48dadcad7",
+      "publication_parent": "5ee41a6dc37ebe5f63bf7a3a0b74c5483460b9c8",
+      "tree_matches_measured": true
     },
     {
       "condition": "alias_only",
       "branch": "study/2026-09-21-gpt-5.3-codex/alias-only",
       "branch_url": "https://github.com/ZhuochengShang/AIDEAL-RDPro/tree/study/2026-09-21-gpt-5.3-codex/alias-only",
-      "commit": "dcaff7fbe2ce704707556b16d3b3e9e6a17a78e1",
-      "commit_url": "https://github.com/ZhuochengShang/AIDEAL-RDPro/commit/dcaff7fbe2ce704707556b16d3b3e9e6a17a78e1",
+      "commit_url": "https://github.com/ZhuochengShang/AIDEAL-RDPro/commit/80ba93d32e9aff65fa12e730abb66a67663b9e35",
       "tree": "fd7aeaa1abe5a0df5ad0752fdbe261bf88cb6dba",
       "code_tree_sha256": "2cd3a594de8f9ec1df57cca43c82d0421836a86695320647663bb0f2244132bc",
       "root_readme_blob": "2ea9f8d6abd2e0e35efb41a5f383a4e2df0680f5",
@@ -55,23 +59,26 @@
           "role": "alias",
           "sha256": "e42afec85dbcb0943ecc767e5824c1533a6ccf2e698b01a2557d731785ed0c2a",
           "bytes": 541,
-          "url": "https://github.com/ZhuochengShang/AIDEAL-RDPro/blob/dcaff7fbe2ce704707556b16d3b3e9e6a17a78e1/cg/src/main/scala/edu/ucr/cs/bdlab/beast/geolite/AidealAliases0001.scala"
+          "url": "https://github.com/ZhuochengShang/AIDEAL-RDPro/blob/80ba93d32e9aff65fa12e730abb66a67663b9e35/cg/src/main/scala/edu/ucr/cs/bdlab/beast/geolite/AidealAliases0001.scala"
         },
         {
           "path": ".aideal/treatments/ALIASES.md",
           "role": "alias_interface",
           "sha256": "d4ab881aca69592db6208e49738c7f4eb30d00f1e903ca658449af7f7558e7f3",
           "bytes": 636,
-          "url": "https://github.com/ZhuochengShang/AIDEAL-RDPro/blob/dcaff7fbe2ce704707556b16d3b3e9e6a17a78e1/.aideal/treatments/ALIASES.md"
+          "url": "https://github.com/ZhuochengShang/AIDEAL-RDPro/blob/80ba93d32e9aff65fa12e730abb66a67663b9e35/.aideal/treatments/ALIASES.md"
         }
-      ]
+      ],
+      "measured_commit": "dcaff7fbe2ce704707556b16d3b3e9e6a17a78e1",
+      "published_commit": "80ba93d32e9aff65fa12e730abb66a67663b9e35",
+      "publication_parent": "5ee41a6dc37ebe5f63bf7a3a0b74c5483460b9c8",
+      "tree_matches_measured": true
     },
     {
       "condition": "error_hints_only",
       "branch": "study/2026-09-21-gpt-5.3-codex/error-hints-only",
       "branch_url": "https://github.com/ZhuochengShang/AIDEAL-RDPro/tree/study/2026-09-21-gpt-5.3-codex/error-hints-only",
-      "commit": "bc55f6b312c048bd6110749e8def2fcaece74968",
-      "commit_url": "https://github.com/ZhuochengShang/AIDEAL-RDPro/commit/bc55f6b312c048bd6110749e8def2fcaece74968",
+      "commit_url": "https://github.com/ZhuochengShang/AIDEAL-RDPro/commit/1f9e0719526455a6a89751869281df91eabeb5c0",
       "tree": "69a1977ec580e6ba598a9cab1710d63244863279",
       "code_tree_sha256": "f6c21f46db0f1872e5c9dd068e6719f8f3a649aeca05558a87179d79235cf3ff",
       "root_readme_blob": "2ea9f8d6abd2e0e35efb41a5f383a4e2df0680f5",
@@ -81,16 +88,19 @@
           "role": "error_hints",
           "sha256": "be6dc8616e50fbb9bcb97b0bcb98c6792a7ea64def37c9be1a5e71c701aaa5f3",
           "bytes": 4874,
-          "url": "https://github.com/ZhuochengShang/AIDEAL-RDPro/blob/bc55f6b312c048bd6110749e8def2fcaece74968/.aideal/treatments/error_hints.json"
+          "url": "https://github.com/ZhuochengShang/AIDEAL-RDPro/blob/1f9e0719526455a6a89751869281df91eabeb5c0/.aideal/treatments/error_hints.json"
         }
-      ]
+      ],
+      "measured_commit": "bc55f6b312c048bd6110749e8def2fcaece74968",
+      "published_commit": "1f9e0719526455a6a89751869281df91eabeb5c0",
+      "publication_parent": "5ee41a6dc37ebe5f63bf7a3a0b74c5483460b9c8",
+      "tree_matches_measured": true
     },
     {
       "condition": "combined",
       "branch": "study/2026-09-21-gpt-5.3-codex/combined",
       "branch_url": "https://github.com/ZhuochengShang/AIDEAL-RDPro/tree/study/2026-09-21-gpt-5.3-codex/combined",
-      "commit": "0db05e0f5a49d6fdc835db7ec771fe8855dd041a",
-      "commit_url": "https://github.com/ZhuochengShang/AIDEAL-RDPro/commit/0db05e0f5a49d6fdc835db7ec771fe8855dd041a",
+      "commit_url": "https://github.com/ZhuochengShang/AIDEAL-RDPro/commit/cdb03c2e8343c80c48ab60d268c9ad3013e3570b",
       "tree": "7f54895634b3bf85d5eb91c314f3c4068a6f431a",
       "code_tree_sha256": "2cd3a594de8f9ec1df57cca43c82d0421836a86695320647663bb0f2244132bc",
       "root_readme_blob": "2ea9f8d6abd2e0e35efb41a5f383a4e2df0680f5",
@@ -100,41 +110,45 @@
           "role": "alias",
           "sha256": "e42afec85dbcb0943ecc767e5824c1533a6ccf2e698b01a2557d731785ed0c2a",
           "bytes": 541,
-          "url": "https://github.com/ZhuochengShang/AIDEAL-RDPro/blob/0db05e0f5a49d6fdc835db7ec771fe8855dd041a/cg/src/main/scala/edu/ucr/cs/bdlab/beast/geolite/AidealAliases0001.scala"
+          "url": "https://github.com/ZhuochengShang/AIDEAL-RDPro/blob/cdb03c2e8343c80c48ab60d268c9ad3013e3570b/cg/src/main/scala/edu/ucr/cs/bdlab/beast/geolite/AidealAliases0001.scala"
         },
         {
           "path": ".aideal/treatments/ALIASES.md",
           "role": "alias_interface",
           "sha256": "d4ab881aca69592db6208e49738c7f4eb30d00f1e903ca658449af7f7558e7f3",
           "bytes": 636,
-          "url": "https://github.com/ZhuochengShang/AIDEAL-RDPro/blob/0db05e0f5a49d6fdc835db7ec771fe8855dd041a/.aideal/treatments/ALIASES.md"
+          "url": "https://github.com/ZhuochengShang/AIDEAL-RDPro/blob/cdb03c2e8343c80c48ab60d268c9ad3013e3570b/.aideal/treatments/ALIASES.md"
         },
         {
           "path": ".aideal/treatments/error_hints.json",
           "role": "error_hints",
           "sha256": "be6dc8616e50fbb9bcb97b0bcb98c6792a7ea64def37c9be1a5e71c701aaa5f3",
           "bytes": 4874,
-          "url": "https://github.com/ZhuochengShang/AIDEAL-RDPro/blob/0db05e0f5a49d6fdc835db7ec771fe8855dd041a/.aideal/treatments/error_hints.json"
+          "url": "https://github.com/ZhuochengShang/AIDEAL-RDPro/blob/cdb03c2e8343c80c48ab60d268c9ad3013e3570b/.aideal/treatments/error_hints.json"
         },
         {
           "path": ".aideal/treatments/README.md",
           "role": "readme",
           "sha256": "ad05224cd45d670bef0ac14e407741fcc641af6d45482d5091f8453c7ec86a80",
           "bytes": 638199,
-          "url": "https://github.com/ZhuochengShang/AIDEAL-RDPro/blob/0db05e0f5a49d6fdc835db7ec771fe8855dd041a/.aideal/treatments/README.md"
+          "url": "https://github.com/ZhuochengShang/AIDEAL-RDPro/blob/cdb03c2e8343c80c48ab60d268c9ad3013e3570b/.aideal/treatments/README.md"
         }
-      ]
+      ],
+      "measured_commit": "0db05e0f5a49d6fdc835db7ec771fe8855dd041a",
+      "published_commit": "cdb03c2e8343c80c48ab60d268c9ad3013e3570b",
+      "publication_parent": "5ee41a6dc37ebe5f63bf7a3a0b74c5483460b9c8",
+      "tree_matches_measured": true
     }
   ],
   "shared_aideal": {
     "repository": "https://github.com/ZhuochengShang/AIDEAL",
     "branch": "evaluation/2026-09-21-rdpro-gpt-5.3-codex-five-conditions",
     "branch_url": "https://github.com/ZhuochengShang/AIDEAL/tree/evaluation/2026-09-21-rdpro-gpt-5.3-codex-five-conditions",
-    "commit": "969f1dd7896226952669a45199bbf1efa2f17d39",
-    "study_package_url": "https://github.com/ZhuochengShang/AIDEAL/tree/969f1dd7896226952669a45199bbf1efa2f17d39/studies/rdpro/2026-09-21-gpt-5.3-codex-five-conditions",
-    "results_url": "https://github.com/ZhuochengShang/AIDEAL/blob/969f1dd7896226952669a45199bbf1efa2f17d39/studies/rdpro/2026-09-21-gpt-5.3-codex-five-conditions/RESULTS.md",
-    "protocol_url": "https://github.com/ZhuochengShang/AIDEAL/blob/969f1dd7896226952669a45199bbf1efa2f17d39/studies/rdpro/2026-09-21-gpt-5.3-codex-five-conditions/protocol.json",
-    "harness_url": "https://github.com/ZhuochengShang/AIDEAL/tree/969f1dd7896226952669a45199bbf1efa2f17d39/studies/rdpro/2026-09-21-gpt-5.3-codex-five-conditions/harness"
+    "commit": "6f90fd658767d804cd232ba1cbf57148e7b87110",
+    "study_package_url": "https://github.com/ZhuochengShang/AIDEAL/tree/6f90fd658767d804cd232ba1cbf57148e7b87110/studies/rdpro/2026-09-21-gpt-5.3-codex-five-conditions",
+    "results_url": "https://github.com/ZhuochengShang/AIDEAL/blob/6f90fd658767d804cd232ba1cbf57148e7b87110/studies/rdpro/2026-09-21-gpt-5.3-codex-five-conditions/RESULTS.md",
+    "protocol_url": "https://github.com/ZhuochengShang/AIDEAL/blob/6f90fd658767d804cd232ba1cbf57148e7b87110/studies/rdpro/2026-09-21-gpt-5.3-codex-five-conditions/protocol.json",
+    "harness_url": "https://github.com/ZhuochengShang/AIDEAL/tree/6f90fd658767d804cd232ba1cbf57148e7b87110/studies/rdpro/2026-09-21-gpt-5.3-codex-five-conditions/harness"
   },
   "measured_scope": {
     "model": "gpt-5.3-codex",
@@ -149,13 +163,23 @@
   "replication_limit": "Source review and offline shared-harness tests are supported. Full local repetition still needs the omitted benchmark/oracle/reference inputs, original evaluation-document bytes and pinned runtime dependencies; build and freeze a new local configuration.",
   "license_provenance": {
     "source_license": "Apache-2.0",
-    "license_url": "https://github.com/ZhuochengShang/AIDEAL-RDPro/blob/547f7f912131a8032f6b5d26991415a5faf05cef/LICENSE",
-    "policy": "Measured branch history retains existing license/copyright files and headers; navigation main does not rewrite those trees.",
+    "license_url": "https://github.com/ZhuochengShang/AIDEAL-RDPro/blob/5ee41a6dc37ebe5f63bf7a3a0b74c5483460b9c8/LICENSE",
+    "policy": "Exact snapshot trees retain existing license/copyright files and headers. Historical ancestry is not republished; the original local histories remain unchanged.",
     "navigation_license": {
       "path": "LICENSE",
       "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
       "bytes": 11358,
       "source": "Byte-identical upstream Apache-2.0 license."
     }
+  },
+  "measured_baseline_commit": "547f7f912131a8032f6b5d26991415a5faf05cef",
+  "published_baseline_commit": "5ee41a6dc37ebe5f63bf7a3a0b74c5483460b9c8",
+  "history_snapshot_policy": {
+    "reason": "Two original-history pushes failed with HTTP 500; local strict Git validation found a malformed inherited tree with duplicate entries.",
+    "malformed_inherited_tree": "90b33f9e36ee3d4f833f496f37c50530aba8571c",
+    "upstream_history_included": false,
+    "original_study_refs_unchanged": true,
+    "identity_rule": "Published and measured commits differ; each corresponding Git tree ID is identical, including tracked file bytes, names and modes. The historical frozen study continues to identify measured commits.",
+    "repetition_rule": "Create named worktrees from published snapshots, then build and freeze a new local study binding its actual branch and published commit identities."
   }
 }
