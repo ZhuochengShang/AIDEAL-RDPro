@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "status": "unverified",
+  "source": "development evidence only",
+  "hints": [
+    {
+      "function_id": "cg/src/main/scala/edu/ucr/cs/bdlab/beast/geolite/Feature.scala:191:readType",
+      "evidence_ids": [
+        "error-1"
+      ],
+      "error_contains": "required: java.io.ObjectInput",
+      "likely_cause": "The call site is passing a raw ByteArrayInputStream, but readType is typed to consume an ObjectInput; this is likely a stream-wrapper mismatch rather than a problem in readType itself.",
+      "fix_steps": [
+        "Confirm the method signature at the call site: `Feature.readType(in: ObjectInput)`.",
+        "Wrap the byte stream in an implementation of ObjectInput, e.g. `java.io.ObjectInputStream` over a `ByteArrayInputStream`.",
+        "Ensure the byte payload was produced by the matching writer contract (`Feature.writeType`) so readType can interpret ordinals and nested types correctly.",
+        "If using Kryo-based inputs elsewhere, verify you convert to an ObjectInput-compatible wrapper before calling readType."
+      ],
+      "suggested_fix_code": "import java.io.{ByteArrayInputStream, ObjectInputStream}\nimport edu.ucr.cs.bdlab.beast.geolite.Feature\n\nval bytes: Array[Byte] = ??? // bytes previously written with Feature.writeType\nval in = new ObjectInputStream(new ByteArrayInputStream(bytes))\nval dt = Feature.readType(in)",
+      "validation": "Add a round-trip check that writes a DataType with `Feature.writeType` into an ObjectOutput-backed byte array, then reads it back with `Feature.readType(ObjectInput)` and asserts equality for primitive, MapType, and ArrayType cases.",
+      "hint_id": "cf98991179854849f2b3",
+      "source_batch": "batch-0001",
+      "status": "unverified"
+    },
+    {
+      "function_id": "cg/src/main/scala/edu/ucr/cs/bdlab/beast/geolite/Feature.scala:405:append",
+      "evidence_ids": [
+        "error-2"
+      ],
+      "error_contains": "required: org.apache.spark.sql.types.DataType",
+      "likely_cause": "Likely the call site is passing a String literal (\"IntegerType\") for `dataType`, but `Feature.append` expects a Spark `DataType` instance, not a textual type name.",
+      "fix_steps": [
+        "Inspect the 4th argument at the call site and confirm it is of type `org.apache.spark.sql.types.DataType`.",
+        "Import Spark SQL types (`org.apache.spark.sql.types._`) and pass a concrete singleton such as `IntegerType`, `StringType`, etc., instead of a String.",
+        "If dynamic type names are unavoidable, map the String to an actual `DataType` before calling `append`.",
+        "Optionally omit the `dataType` argument entirely and let `Feature.append` infer it via `detectType(value)`."
+      ],
+      "suggested_fix_code": "import org.apache.spark.sql.types.IntegerType\nimport edu.ucr.cs.bdlab.beast.geolite.Feature\n\nFeature.append(null, 17, \"count\", IntegerType)\n// or: Feature.append(null, 17, \"count\")",
+      "validation": "Recompile the failing probe and confirm the type-mismatch error disappears; then verify the appended field has expected schema type (`IntegerType`) when inspected from the returned feature.",
+      "hint_id": "a449ba2ee66cea58dac9",
+      "source_batch": "batch-0002",
+      "status": "unverified"
+    },
+    {
+      "function_id": "cg/src/main/scala/edu/ucr/cs/bdlab/beast/geolite/RasterSchemaHelper.scala:101:inferSchema",
+      "evidence_ids": [
+        "error-3"
+      ],
+      "error_contains": "type mismatch;",
+      "likely_cause": "The first argument was passed as `Array(42)`, which is inferred as `Array[Int]`, but this API requires `names: Array[String]`.",
+      "fix_steps": [
+        "Change the first argument to an `Array[String]`, e.g., `Array(\"colName\")`.",
+        "Keep the second argument as `Array[Any]` (or another expression typed as `Array[Any]`) when mixing value types.",
+        "If names are computed, ensure the producing expression is explicitly typed to `String` elements before passing to `inferSchema`."
+      ],
+      "suggested_fix_code": "import edu.ucr.cs.bdlab.beast.geolite.RasterSchemaHelper\nRasterSchemaHelper.inferSchema(Array(\"value\"), Array[Any](17))",
+      "validation": "Recompile the call site and confirm there is no argument type-mismatch error; then verify the returned StructType has one field named `value`.",
+      "hint_id": "579d77a4c94a29bbcb04",
+      "source_batch": "batch-0004",
+      "status": "unverified"
+    },
+    {
+      "function_id": "cg/src/main/scala/edu/ucr/cs/bdlab/beast/geolite/RasterMetadata.scala:219:rescale",
+      "evidence_ids": [
+        "error-4"
+      ],
+      "error_contains": "type mismatch;",
+      "likely_cause": "The method signature requires integer pixel dimensions, but floating-point literals (`9.5`, `7.5`) were provided.",
+      "fix_steps": [
+        "Pass integer dimensions to `rescale`, e.g., `metadata.rescale(9, 7)`.",
+        "If dimensions originate as doubles, apply an explicit conversion policy (`toInt`, `round.toInt`, `ceil.toInt`, etc.) before calling, based on intended semantics.",
+        "Review upstream dimension calculations to ensure raster sizes are represented as integral pixel counts before API invocation."
+      ],
+      "suggested_fix_code": "import edu.ucr.cs.bdlab.beast.geolite.RasterMetadata\nval metadata: RasterMetadata = ???\nmetadata.rescale(10, 8)",
+      "validation": "Recompile after replacing double arguments with `Int` expressions and confirm type errors are gone; additionally check resulting metadata dimensions match the intended rounded/truncated policy.",
+      "hint_id": "2b4ec1ab9b49035c3366",
+      "source_batch": "batch-0004",
+      "status": "unverified"
+    }
+  ]
+}
