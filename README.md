@@ -1,3 +1,15 @@
+# RDPro / Beast: verified source and AIDEAL experiments
+
+The current prepared study uses the **official Beast/RDPro 0.10.1 source**. A fresh HTTPS clone from Bitbucket was verified on September 22, 2026: all 921 tracked entries and 886 unique file blobs match the study baseline, with zero differences.
+
+[Official-source proof](provenance/provenancePUBLIC.md) · [Machine-readable proof](provenance/provenancePUBLIC.json) · [Current 32-task study and recording plan](https://github.com/ZhuochengShang/AIDEAL/tree/evaluation/2026-09-22-rdpro-full-pipeline/studies/rdpro/2026-09-22-full-pipeline)
+
+The official commit is `547f7f912131a8032f6b5d26991415a5faf05cef`; the clean GitHub source snapshot is `5ee41a6dc37ebe5f63bf7a3a0b74c5483460b9c8`. Both have tree `757142fe21ba53b1388880d6abc7423aff844295`. The commit numbers differ because the snapshot omits upstream history containing a malformed historical Git tree; its source files do not differ. `RasterSchemaHelper.inferSchema` and `detectType` are upstream methods from 2024, not generated aliases.
+
+The new run covers 16 APIs, 32 tasks, three trials and all five conditions (480 audience units), with one repair per unit. Generation, treatment validation and evaluation records will identify their exact source and controller commits. New results are not available at publication of this preparation update. The completed pilot described below remains unchanged.
+
+---
+
 # AIDEAL–RDPro: five measured source conditions
 
 This repository publishes **exact source snapshots** of the RDPro/Beast library versions used in the 2026-09-21 GPT-5.3-Codex study. The shared AIDEAL controller, portable results and harness live in [ZhuochengShang/AIDEAL](https://github.com/ZhuochengShang/AIDEAL/tree/evaluation/2026-09-21-rdpro-gpt-5.3-codex-five-conditions). There is **one RDPro repository with five condition branches**, not five separate forks.
